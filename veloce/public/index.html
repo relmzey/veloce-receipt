@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veloce Receipt Maker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel controls">
+        <h1>Veloce Receipt Maker</h1>
+        <form id="receiptForm" class="form-grid">
+          <label>
+            <span>Service</span>
+            <select id="service" required>
+              <option value="Instagram Followers">Instagram Followers</option>
+              <option value="Instagram Likes">Instagram Likes</option>
+              <option value="Reel Views">Reel Views</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Username</span>
+            <input id="username" type="text" placeholder="@username" />
+          </label>
+
+          <label>
+            <span>Quantity Requested</span>
+            <input id="quantityRequested" type="number" min="0" required />
+          </label>
+
+          <label>
+            <span>Quantity Received</span>
+            <input id="quantityReceived" type="number" min="0" required />
+          </label>
+
+          <label>
+            <span>Charge (₹)</span>
+            <input id="charge" type="number" min="0" step="0.01" required />
+          </label>
+
+          <div class="actions">
+            <button type="submit" id="generateBtn">Generate Receipt</button>
+            <button type="button" id="downloadBtn" disabled>Download JPG</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="preview-wrap">
+        <div class="receipt" id="receiptCard">
+          <header class="receipt-header">
+            <div class="badge">✓</div>
+            <h2>Veloce</h2>
+            <p>RECEIPT</p>
+          </header>
+
+          <div class="receipt-body">
+            <div class="field-row"><span>Order ID</span><strong id="rOrderId">-</strong></div>
+            <div class="field-row"><span>Service</span><strong id="rService">-</strong></div>
+            <div class="field-row"><span>Username</span><strong id="rUsername">-</strong></div>
+            <div class="field-row"><span>Quantity Requested</span><strong id="rQtyReq">-</strong></div>
+            <div class="field-row"><span>Quantity Received</span><strong id="rQtyRec">-</strong></div>
+            <div class="field-row"><span>Charge</span><strong id="rCharge" class="charge">-</strong></div>
+          </div>
+
+          <footer class="receipt-footer">
+            <div class="trusted">TRUSTED SMM PANEL IN TVLA</div>
+            <div id="rDateTime">-</div>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
